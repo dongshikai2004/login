@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login / Signup</title>
+        <link rel="stylesheet" href="login.css">
+    </head>
+
+    <body>
+        <div class="custom-alert" id="customAlert">
+            <div class="message"></div>
+            <div class="countdown"></div>
+        </div>
+        <div class="container">
+            <!-- 登录 -->
+            <form id="loginForm" class="form">
+                <h2>Login</h2>
+                <input id="text" type="text" placeholder="Name"required>
+                <input id="password" type="password" placeholder="Password"required>
+                <button type="button" onclick="login()">Login</button>
+                <div id="loginResult"></div>
+                <br>
+                <p>Don't have an account? <a href="#" id="signupLink">Signup</a></p>
+            </form>
+            <!-- 注册 -->
+            <form id="signupForm" class="form hidden">
+                <h2>Signup</h2>
+                <input id="text-signup" type="text" placeholder="Name"required>
+                <input id="password-signup" type="password" placeholder="Password"
+                    oninput="checkPasswordStrength(this.value)"required>
+                <!-- 密码强度条 -->
+                <div class="psc">
+                    <div id="strength"></div>
+                    <div style="margin: 8px;">a</div>
+                    <div style="margin: 8px;">a</div>
+                    <div style="margin: 8px;">a</div>
+                </div>
+                <button type="button" onclick="signup()">Signup</button>
+                <p>Already have an account? <a href="#" id="loginLink">Login</a></p>
+            </form>
+        </div>
+
+        <script src="login.js"></script>
+    </body>
+
+</html>
