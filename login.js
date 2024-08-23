@@ -51,14 +51,14 @@ function checkPasswordStrength(password) {
 function signup() {
     const username = document.getElementById('text-signup').value;
     const password = document.getElementById('password-signup').value;
-    const strength = document.getElementById('strength').value;
+    const strength = document.getElementById('strength');
     if (localStorage.getItem(username)) {
         showAlertWithCountdown("用户名已存在，请选择其他用户名。",3);
     }
     else if(username.length==0){
         showAlertWithCountdown("请输入用户名",3);
     }
-    else if(strength.textContent=='无效'||strength.textContent=='弱'){
+    else if(strength.textContent=="无效"||strength.textContent=='弱'||strength.textContent,length==0){
         showAlertWithCountdown("请提高密码强度",3);
     }
     else {
