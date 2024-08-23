@@ -16,7 +16,7 @@ function checkPasswordStrength(password) {
 
     if (!hasDigit || !hasLetter) {
         document.getElementById('strength').textContent = "无效";
-        return;
+        bardisplay('无效');
     }
 
     // 密码至少为弱强度
@@ -45,8 +45,29 @@ function checkPasswordStrength(password) {
     }
 
     document.getElementById('strength').textContent = strength;
+    bardisplay(strength);
 }
-
+function bardisplay(strength){
+    const bar=document.getElementById('bar');
+    switch (strength){
+        case '强':
+            bar.style.backgroundColor='green';
+            bar.style.width='240px';
+            break;
+        case '中':
+            bar.style.backgroundColor='yellow';
+            bar.style.width='160px';
+            break;
+        case '弱':
+            bar.style.backgroundColor='red';
+            bar.style.width='80px';
+            break;
+        case '无效':
+            bar.style.width='0px';
+            break;
+        return ;
+    }
+}
 //注册账号
 function signup() {
     const username = document.getElementById('text-signup').value;
