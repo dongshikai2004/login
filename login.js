@@ -58,7 +58,7 @@ function signup() {
     else if(username.length==0){
         showAlertWithCountdown("请输入用户名",3);
     }
-    else if(strength.textContent=="无效"||strength.textContent=='弱'||strength.textContent,length==0){
+    else if(strength.textContent!='强'){
         showAlertWithCountdown("请提高密码强度",3);
     }
     else {
