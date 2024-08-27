@@ -3,10 +3,12 @@ function checkPasswordStrength(password) {
     // 密码长度至少为6
     if (password.length == 0) {
         document.getElementById('strength').textContent = "";
+        bardisplay("");
         return;
     }
     if (password.length < 6) {
         document.getElementById('strength').textContent = "无效";
+        bardisplay("无效");
         return;
     }
 
@@ -55,17 +57,16 @@ function bardisplay(strength){
             bar.style.width='240px';
             break;
         case '中':
-            bar.style.backgroundColor='yellow';
+            bar.style.backgroundColor='#ba7418';
             bar.style.width='160px';
             break;
         case '弱':
             bar.style.backgroundColor='red';
             bar.style.width='80px';
             break;
-        case '无效':
+        default:
             bar.style.width='0px';
             break;
-        return ;
     }
 }
 //注册账号
